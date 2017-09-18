@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TicTacMutual</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_valid_email">Enter valid email</string>
+    <string name="error_while_reading_user_details">Error while reading user details</string>
+    <string name="error_while_loading_user_details">Error while loading user details</string>
+    <string name="error_while_reading_waiting_game">Error while reading waiting games</string>
+    <string name="error_while_loading_waiting_game">Error while loading waiting games</string>
+    <string name="wait_for_other_players_move">Wait for other players move</string>
+    <string name="error_while_loading_game_data">Error while loading game data</string>
+    <string name="error_while_reading_game_data">Error while reading game data</string>
+    <string name="draw">DRAW</string>
+    <string name="won">WON</string>
+    <string name="lost">LOST</string>
+</resources>

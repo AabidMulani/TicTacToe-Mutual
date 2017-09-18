@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="FONT_BOLD">1</integer>
+    <integer name="FONT_LIGHT">2</integer>
+    <integer name="FONT_MEDIUM">3</integer>
+    <integer name="FONT_THIN">4</integer>
+
+</resources>

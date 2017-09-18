@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/desert_white"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/mainGameBoard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@color/greyTextColor"
+                android:padding="1dp">
+
+                <com.aabidmulani.tictacmutual.widgets.RobotoTextView
+                    android:id="@+id/boxA"
+                    style="@style/GameTickBoxStyle"
+                    android:layout_marginBottom="1dp" />
+
+                <com.aabidmulani.tictacmutual.widgets.RobotoTextView
+                    android:id="@+id/boxB"
+                    style="@style/GameTickBoxStyle"
+                    android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/boxA" />
+
+
+                <com.aabidmulani.tictacmutual.widgets.RobotoTextView
+                    android:id="@+id/boxC"
+                    style="@style/GameTickBoxStyle"
+                    android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/boxB" />
+
+                <com.aabidmulani.tictacmutual.widgets.RobotoTextView
+                    android:id="@+id/boxD"
+                    style="@style/GameTickBoxStyle"
+                    android:layout_below="@id/boxA"
+                    android:layout_marginBottom="1dp" />
+
+                <com.aabidmulani.tictacmutual.widgets.RobotoTextView
+                    android:id="@+id/boxE"
+                    style="@style/GameTickBoxStyle"
+                    android:layout_below="@id/boxA"
+                    android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/boxD" />
+
+                <com.aabidmulani.tictacmutual.widgets.RobotoTextView
+                    android:id="@+id/boxF"
+                    style="@style/GameTickBoxStyle"
+                    android:layout_below="@id/boxA"
+                    android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/boxE" />
+
+
+                <com.aabidmulani.tictacmutual.widgets.RobotoTextView
+                    android:id="@+id/boxG"
+                    style="@style/GameTickBoxStyle"
+                    android:layout_below="@id/boxD" />
+
+                <com.aabidmulani.tictacmutual.widgets.RobotoTextView
+                    android:id="@+id/boxH"
+                    style="@style/GameTickBoxStyle"
+                    android:layout_below="@id/boxD"
+                    android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/boxG" />
+
+                <com.aabidmulani.tictacmutual.widgets.RobotoTextView
+                    android:id="@+id/boxI"
+                    style="@style/GameTickBoxStyle"
+                    android:layout_below="@id/boxD"
+                    android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/boxH" />
+
+            </RelativeLayout>
+
+
+            <com.aabidmulani.tictacmutual.widgets.RobotoTextView
+                android:id="@+id/displayMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mainGameBoard"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:text="Welcome"
+                android:textColor="@color/primary_dark"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:id="@+id/gameStatusLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CC000000"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <com.aabidmulani.tictacmutual.widgets.RobotoTextView
+                    android:id="@+id/displayStatusMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:text="Welcome"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="22sp" />
+
+                <com.aabidmulani.tictacmutual.widgets.RobotoButton
+                    android:id="@+id/gameOverButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@color/colorAccent"
+                    android:text="Okay"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/img_splash_tictac" />
+
+    <com.aabidmulani.tictacmutual.widgets.RobotoEditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/proceedButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <com.aabidmulani.tictacmutual.widgets.RobotoButton
+        android:id="@+id/proceedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:text="Proceed"
+        android:visibility="gone"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

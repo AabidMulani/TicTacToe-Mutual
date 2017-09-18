@@ -1,0 +1,7 @@
+<resources>
+
+    <declare-styleable name="customTextView">
+        <attr name="textStyle" format="integer" />
+    </declare-styleable>
+
+</resources>
