@@ -1,4 +1,4 @@
-package com.aabidmulani.tictacmutual.app.components;
+package com.aabidmulani.tictacmutual.app.qualifiers;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

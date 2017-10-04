@@ -41,13 +41,13 @@ public class DashboardFragmentPresenter {
             if (dataSnapshot != null) {
                 WaitingGameDetailsModel waitingGameDetailsModel = dataSnapshot.getValue(WaitingGameDetailsModel.class);
                 if (waitingGameDetailsModel != null) {
-                    if (!waitingGameDetailsModel.getNodeKeyName().equals(currentNewGameRequestId)) {
+                    if (waitingGameDetailsModel.getNodeKeyName() != null && !waitingGameDetailsModel.getNodeKeyName().equals(currentNewGameRequestId)) {
                         if (waitingGameDetailsModelsList == null) {
                             waitingGameDetailsModelsList = new ArrayList<>();
                         }
                         boolean found = false;
                         for (WaitingGameDetailsModel model : waitingGameDetailsModelsList) {
-                            if (model.getNewMatchNodeId().equals(waitingGameDetailsModel.getNodeKeyName())) {
+                            if (model.getNewMatchNodeId() != null && model.getNewMatchNodeId().equals(waitingGameDetailsModel.getNodeKeyName())) {
                                 found = true;
                                 break;
                             }

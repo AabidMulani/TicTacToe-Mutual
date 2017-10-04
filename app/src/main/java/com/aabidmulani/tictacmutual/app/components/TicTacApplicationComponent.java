@@ -1,8 +1,29 @@
 package com.aabidmulani.tictacmutual.app.components;
 
-/**
- * Created by aabid-personal on 10/4/17.
- */
+import android.app.Application;
+import android.content.Context;
 
-public class TicTacApplicationComponent {
+import com.aabidmulani.tictacmutual.BaseApplication;
+import com.aabidmulani.tictacmutual.app.modules.TicTacApplicationModule;
+import com.aabidmulani.tictacmutual.app.qualifiers.TicTacAppContext;
+import com.aabidmulani.tictacmutual.sharedpreferences.TicTacAppSharedPreference;
+
+import javax.inject.Singleton;
+
+import dagger.Component;
+
+@Singleton
+@Component(modules = TicTacApplicationModule.class)
+public interface TicTacApplicationComponent {
+
+    void inject(BaseApplication demoApplication);
+
+    @TicTacAppContext
+    Context getContext();
+
+    Application getApplication();
+
+    TicTacAppSharedPreference getPreferenceHelper();
+
+
 }

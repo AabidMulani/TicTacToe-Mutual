@@ -22,4 +22,8 @@ public class AppConstants {
 
     public static final String COUNT_LOSS = "lossCount";
 
+    public static final String PREF_USER_EMAIL = "user_email";
+
+    public static final String APP_PREF = "tictac_app_preference";
+
 }

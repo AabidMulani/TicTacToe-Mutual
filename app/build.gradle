@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 25
@@ -12,6 +11,11 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
+
 
     signingConfigs {
         debug {
@@ -60,9 +64,12 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:cardview-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
-    compile 'com.jakewharton:butterknife:8.3.0'
+
     compile 'com.jakewharton.timber:timber:4.5.1'
-    apt 'com.jakewharton:butterknife-compiler:8.3.0'
+
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    annotationProcessor 'org.immutables:value:2.4.4'
 
 
     compile 'com.google.firebase:firebase-core:11.2.2'
@@ -72,6 +79,13 @@ dependencies {
 
     testCompile 'org.mockito:mockito-core:2.7.22'
     androidTestCompile 'org.mockito:mockito-android:2.7.22'
+
+    compile 'com.google.dagger:dagger:2.11'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+
+    provided 'javax.annotation:jsr250-api:1.0'
+    compile 'javax.inject:javax.inject:1'
+
 }
 
 

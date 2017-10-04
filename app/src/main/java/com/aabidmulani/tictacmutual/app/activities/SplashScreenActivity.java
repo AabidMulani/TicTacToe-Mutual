@@ -1,17 +1,24 @@
 package com.aabidmulani.tictacmutual.app.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.aabidmulani.tictacmutual.BaseActivity;
+import com.aabidmulani.tictacmutual.BaseApplication;
 import com.aabidmulani.tictacmutual.R;
+import com.aabidmulani.tictacmutual.app.components.DaggerSplashScreenActivityComponent;
+import com.aabidmulani.tictacmutual.app.components.SplashScreenActivityComponent;
+import com.aabidmulani.tictacmutual.app.modules.SplashScreenActivityModule;
 import com.aabidmulani.tictacmutual.app.presenter.SplashScreenPresenter;
 import com.aabidmulani.tictacmutual.app.views.SplashScreenView;
 import com.aabidmulani.tictacmutual.utils.Utils;
 import com.aabidmulani.tictacmutual.widgets.RobotoButton;
 import com.aabidmulani.tictacmutual.widgets.RobotoEditText;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,14 +32,32 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
     @BindView(R.id.proceedButton)
     RobotoButton proceedButton;
 
-    private SplashScreenPresenter splashScreenPresenter;
+    private SplashScreenActivityComponent activityComponent;
+
+    @Inject
+    SplashScreenPresenter splashScreenPresenter;
+
+    @Inject
+    Context context;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         ButterKnife.bind(this);
-        splashScreenPresenter = new SplashScreenPresenter(activity, this);
+        initDagger();
+    }
+
+    private void initDagger() {
+        if (activityComponent == null) {
+            activityComponent = DaggerSplashScreenActivityComponent
+                    .builder()
+                    .splashScreenActivityModule(new SplashScreenActivityModule(this, this))
+                    .ticTacApplicationComponent(((BaseApplication) getApplication()).getApplicationComponent())
+                    .build();
+        }
+        activityComponent.inject(this);
     }
 
     @OnClick(R.id.proceedButton)
